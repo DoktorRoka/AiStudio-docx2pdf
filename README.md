@@ -21,7 +21,8 @@ DOCX → mammoth → HTML → html2canvas → canvas → jsPDF → PDF → DataT
 
 1. Установите расширение [Tampermonkey](https://www.tampermonkey.net/).
 2. Новый скрипт → вставьте содержимое `ai-studio-docx2pdf.user.js` → `Ctrl+S`.
-2.1 Или установить через [Ссылку](https://github.com/DoktorRoka/AiStudio-docx2pdf/raw/refs/heads/main/ai-studio-docx2pdf.user.js)
+
+2.1 Или установить через [Ссылку](https://github.com/DoktorRoka/AiStudio-docx2pdf/raw/refs/heads/main/ai-studio-docx2pdf.user.js).
 4. Откройте `https://aistudio.google.com`, выберите `.docx` через кнопку загрузки или перетаскиванием — появится прикреплённый PDF с тем же именем.
 
 ## Возможности
