@@ -3,7 +3,7 @@
 // @namespace    local.ai-studio-docx2pdf
 // @version      1.2.6
 // @description  Автоматически конвертирует .docx в .pdf при загрузке в Google AI Studio (локально, в браузере, библиотеки встроены)
-// @author       you
+// @author       DoktorRoka
 // @license      MIT
 // @match        https://aistudio.google.com/*
 // @match        https://makersuite.google.com/*
@@ -734,7 +734,7 @@ const fallback = document.querySelector(FILE_INPUT_FALLBACK);
     }
 
     // ============================================================
-    // СТАТУС-ИНДИКАТОР (маленькая панель в углу, §26)
+    // СТАТУС-ИНДИКАТОР (маленькая панель в углу)
     // ============================================================
     const STATUS_CSS = `
 #aisd2p-status{position:fixed;top:12px;right:12px;z-index:2147483647;max-width:340px;
@@ -826,7 +826,7 @@ const fallback = document.querySelector(FILE_INPUT_FALLBACK);
             try { await document.fonts.ready; } catch (e) { /* ignore */ }
         }
 
-        // Адаптивный масштаб: не даём canvas стать слишком высоким (§13, Тест 10).
+        // Адаптивный масштаб: не даём canvas стать слишком высоким.
         // Браузеры обычно поддерживают одну сторону canvas до ~32767px — держим запас.
         const naturalH = Math.max(1, contentEl.getBoundingClientRect().height);
         let scale = IMG_SCALE;
@@ -957,7 +957,7 @@ const mammothLib = libsFromRefs().mammoth || window.mammoth;
         processing = true;
         try {
             // Немедленно очищаем DOCX из input: копии File уже сняты в `files`,
-            // AI Studio не должна получить доступ к исходному DOCX (§10).
+            // AI Studio не должна получить доступ к исходному DOCX.
             resetInput(input);
 
 if (!librariesReady()) {
@@ -1084,7 +1084,7 @@ function resetDragOverlay() {
         processFiles(input, files);
     }
 
-    // Проверка, что инпут относится к загрузке файлов в чат (§22).
+    // Проверка, что инпут относится к загрузке файлов в чат).
     function needsInterception(input) {
         if (input.matches(FILE_INPUT_SELECTOR)) return true;
         try {
@@ -1094,7 +1094,7 @@ function resetDragOverlay() {
         }
     }
 
-    // MutationObserver (§23): следим за появлением инпута и компонента.
+    // MutationObserver: следим за появлением инпута и компонента.
     // Обработчики вешаются на document один раз и работают для любых
     // динамически создаваемых инпутов, поэтому лёгкий наблюдатель нужен
     // в основном для диагностики в DEBUG-режиме.
